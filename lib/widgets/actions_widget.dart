@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gps/bloc/bloc.dart';
+import 'package:gps/services/services.dart';
 
 class ActionWidget extends StatelessWidget {
   @override
@@ -69,6 +70,15 @@ class ActionWidget extends StatelessWidget {
                 child: Icon(
                   Icons.restore,
                   color: Colors.purple.shade900,
+                ),
+              ),
+              RaisedButton(
+                shape: const CircleBorder(side: BorderSide.none),
+                onPressed: () => ShareService.share(
+                    ShareService.jsonEncodePosition(locationState.positions)),
+                child: Icon(
+                  Icons.share,
+                  color: Colors.lightGreen,
                 ),
               ),
             ],

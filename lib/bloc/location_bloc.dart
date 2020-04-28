@@ -70,8 +70,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
       LocationState currentState, Stopped event) async* {
     if (currentState is LocationTrackingInProgress) {
       _positionSubscription?.cancel();
-      print(json.encode(
-          currentState.positions.map<Point>(Point.fromPosition).toList()));
+
       yield LocationTrackingStopped(positions: currentState.positions);
     }
   }
