@@ -17,7 +17,6 @@ class ShareService {
   }
 
   static String jsonEncodePosition(List<Position> positions) {
-    print(json.encode(positions.map<Point>(Point.fromPosition).toList()));
     return json.encode(positions.map<Point>(Point.fromPosition).toList());
   }
 }
