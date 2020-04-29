@@ -1,4 +1,3 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gps/bloc/bloc.dart';
@@ -62,13 +61,26 @@ class LocationListScreen extends StatelessWidget {
 
   Center buildCenter() {
     return Center(
-      child: TypewriterAnimatedTextKit(
-        text: ['Press Play Button To Start Tracking..'],
-        textStyle: TextStyle(
-          fontSize: 18.0,
-        ),
-        totalRepeatCount: 1000,
-        speed: Duration(milliseconds: 150),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "GPS Tracking",
+            style: TextStyle(
+              fontSize: 18,
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            "© MethodPark",
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          )
+        ],
       ),
     );
   }

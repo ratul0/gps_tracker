@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:jiffy/jiffy.dart';
+import 'package:date_time_format/date_time_format.dart';
+import 'package:jiffy/jiffy.dart';
 
 class LocationListCard extends StatelessWidget {
   final Position position;
@@ -16,7 +18,7 @@ class LocationListCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Text(
-                'Lattitude: ${position.latitude}',
+                'Latitude: ${position.latitude}',
                 style: TextStyle(
                   fontSize: 18.0,
                 ),
@@ -30,7 +32,8 @@ class LocationListCard extends StatelessWidget {
               ),
               SizedBox(height: 6.0),
               Text(
-                '${Jiffy(position.timestamp.add(Duration(hours: 2))).Hms}',
+                '${DateTimeFormat.format(position.timestamp, format: 'D, M j, H:i:s:v:u')}',
+//                '${Jiffy(position.timestamp.add(Duration(hours: 2))).Hms}',
                 style: TextStyle(
                   fontSize: 14.0,
                 ),

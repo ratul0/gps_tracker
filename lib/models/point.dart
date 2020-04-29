@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:date_time_format/date_time_format.dart';
 import 'package:equatable/equatable.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:jiffy/jiffy.dart';
@@ -62,7 +63,7 @@ class Point extends Equatable {
     return {
       'longitude': longitude,
       'latitude': latitude,
-      'time': Jiffy(timestamp.add(Duration(hours: 2))).Hms,
+      'time': DateTimeFormat.format(timestamp, format: 'D, M j, H:i:s:v:u'),
       'altitude': altitude,
       'speed ': speed
     };
